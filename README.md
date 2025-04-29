@@ -1,4 +1,4 @@
-# SR-FLIPFLOP-USING-CASE
+# EXP-06 SR-FLIPFLOP-USING-CASE
 
 **AIM:**
 
@@ -34,15 +34,46 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Write Verilog code for SR flip-flop using a case statement.
+
+2.Compile and check the design for syntax or logic errors.
+
+3.Create a testbench to apply various SR input combinations.
+
+4.Simulate the design and observe Q and Qbar waveforms.
+
+5.Record and analyze results for all input cases, including invalid.
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
+/* Program for flipflops and verify its truth table in quartus using Verilog programming. 
+
+Developed by: MITHUN S
+
+RegisterNumber: 212224240088
 */
+```
+ module exp06(S,R,clk,Q,Qbar);
+ input S,R,clk;
+ output reg Q;
+ output reg Qbar;
+ initial Q=0;
+ initial Qbar=1;
+ always @(posedge clk) begin Q=S|((~R)&Q);
+ Qbar=R|((~S) & (Qbar));
+ end endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![image](https://github.com/user-attachments/assets/7e1fb88c-41e3-4eae-b2ee-fcc7444256cf)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/user-attachments/assets/b83fee26-a4e5-4f79-87ce-18ae725c8049)
+
+
 **RESULTS**
+
+To implement SR flipflop using verilog and validating their functionality using their functional tables is verified.
